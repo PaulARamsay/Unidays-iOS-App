@@ -11,6 +11,6 @@ struct BreedList: Decodable {
     let breed: [String : [String]]
     
     enum CodingKeys: String, CodingKey {
-        case breed = "messages"
+        case breed = "message"
     }
 }

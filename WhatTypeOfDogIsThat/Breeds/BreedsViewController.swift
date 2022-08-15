@@ -9,8 +9,9 @@ import UIKit
 
 protocol BreedsViewPresenting: AnyObject {
     func numberOfRows() -> Int
-    func item(for row: Int) -> [String : [String]]
+    func item(for row: Int) -> String
     func didSelectItem(at row: Int)
+    func viewDidLoad()
 }
 
 class BreedsViewController: UIViewController {
@@ -22,12 +23,18 @@ class BreedsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.register(cells: [BreedTableViewCell.self])
+        self.presenter.viewDidLoad()
     }
 }
 
 // MARK: -  BreedsView
 
-extension BreedsViewController: BreedsView {}
+extension BreedsViewController: BreedsView {
+    
+    func reloadTableView() {
+        self.tableView.reloadData()
+    }
+}
 
 // MARK: - UITableViewDelegate
 
@@ -49,7 +56,7 @@ extension BreedsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let breed = self.presenter.item(for: indexPath.row)
         let cell = tableView.dequeue(cell: BreedTableViewCell.self, at: indexPath)
-        cell.setupCell(breed: breed)
+        cell.setupCell(breedName: breed)
         return cell
     }
 }

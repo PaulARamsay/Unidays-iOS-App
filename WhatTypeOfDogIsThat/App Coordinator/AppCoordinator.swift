@@ -21,7 +21,7 @@ class AppCoordinator: Coordinator {
     var window: UIWindow
 
     private lazy var breedListCoordinator: Coordinator = {
-        return BreedListCoordinator(navigationController: self.navigationController)
+        return BreedListCoordinator(navigationController: self.navigationController, window: self.window)
     }()
     
     init(navigationController: UINavigationController,
@@ -33,10 +33,5 @@ class AppCoordinator: Coordinator {
     func start() {
         let coordinator = self.breedListCoordinator
         coordinator.start()
-        let view = BreedsViewController()
-        let presenter = BreedsPresenter(view: view)
-        view.presenter = presenter
-        self.window.rootViewController = UINavigationController(rootViewController: view)
-        self.window.makeKeyAndVisible()
     }
 }

@@ -11,8 +11,8 @@ class BreedTableViewCell: UITableViewCell {
 
     @IBOutlet weak var breedTextLabel: UILabel!
     
-    func setupCell(breed: [String : [String]]) {
-        self.breedTextLabel.text = breed.first?.key
+    func setupCell(breedName: String) {
+        self.breedTextLabel.text = breedName
     }
 }
 

@@ -20,6 +20,10 @@
 		5B86A22E28AA914700126EDB /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22B28AA914700126EDB /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B86A22F28AA914700126EDB /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */; };
 		5B86A23028AA914700126EDB /* AlamofireImage.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B86A23428AA927300126EDB /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A23328AA927300126EDB /* AppCoordinator.swift */; };
+		5B86A23828AA935E00126EDB /* BreedsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A23628AA935E00126EDB /* BreedsViewController.swift */; };
+		5B86A23928AA935E00126EDB /* BreedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B86A23728AA935E00126EDB /* BreedsViewController.xib */; };
+		5B86A23B28AA936D00126EDB /* BreedsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A23A28AA936D00126EDB /* BreedsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,10 @@
 		5B47233828AA83B200BD7B9C /* WhatTypeOfDogIsThatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTypeOfDogIsThatUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		5B86A22B28AA914700126EDB /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireImage.xcframework; path = Carthage/Build/AlamofireImage.xcframework; sourceTree = "<group>"; };
+		5B86A23328AA927300126EDB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		5B86A23628AA935E00126EDB /* BreedsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsViewController.swift; sourceTree = "<group>"; };
+		5B86A23728AA935E00126EDB /* BreedsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedsViewController.xib; sourceTree = "<group>"; };
+		5B86A23A28AA936D00126EDB /* BreedsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +131,8 @@
 		5B47231428AA83AF00BD7B9C /* WhatTypeOfDogIsThat */ = {
 			isa = PBXGroup;
 			children = (
+				5B86A23528AA934200126EDB /* Breeds */,
+				5B86A23228AA926200126EDB /* App Coordinator */,
 				5B47231528AA83AF00BD7B9C /* AppDelegate.swift */,
 				5B47231728AA83AF00BD7B9C /* SceneDelegate.swift */,
 				5B47231928AA83AF00BD7B9C /* ViewController.swift */,
@@ -158,6 +168,24 @@
 				5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5B86A23228AA926200126EDB /* App Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				5B86A23328AA927300126EDB /* AppCoordinator.swift */,
+			);
+			path = "App Coordinator";
+			sourceTree = "<group>";
+		};
+		5B86A23528AA934200126EDB /* Breeds */ = {
+			isa = PBXGroup;
+			children = (
+				5B86A23628AA935E00126EDB /* BreedsViewController.swift */,
+				5B86A23728AA935E00126EDB /* BreedsViewController.xib */,
+				5B86A23A28AA936D00126EDB /* BreedsPresenter.swift */,
+			);
+			path = Breeds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +294,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B47232228AA83B100BD7B9C /* LaunchScreen.storyboard in Resources */,
+				5B86A23928AA935E00126EDB /* BreedsViewController.xib in Resources */,
 				5B47231F28AA83B100BD7B9C /* Assets.xcassets in Resources */,
 				5B47231D28AA83AF00BD7B9C /* Main.storyboard in Resources */,
 			);
@@ -293,6 +322,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				5B47231A28AA83AF00BD7B9C /* ViewController.swift in Sources */,
+				5B86A23828AA935E00126EDB /* BreedsViewController.swift in Sources */,
+				5B86A23428AA927300126EDB /* AppCoordinator.swift in Sources */,
+				5B86A23B28AA936D00126EDB /* BreedsPresenter.swift in Sources */,
 				5B47231628AA83AF00BD7B9C /* AppDelegate.swift in Sources */,
 				5B47231828AA83AF00BD7B9C /* SceneDelegate.swift in Sources */,
 			);

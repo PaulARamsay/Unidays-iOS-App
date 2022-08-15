@@ -1,0 +1,83 @@
+{
+  "Mac" : [
+    {
+      "hash" : "100f88f2cdf3b13d2525ab6f94382b4df8ea9808c0e4c4cf923a015f8447c51a",
+      "name" : "SDWebImage",
+      "container" : "SDWebImage.xcframework",
+      "identifier" : "macos-arm64_x86_64"
+    },
+    {
+      "hash" : "c1f9cd17c1bfaa87ced403a7edd12d71e55e3d4bf686010ed7c2dc16187be0cd",
+      "name" : "SDWebImageMapKit",
+      "container" : "SDWebImageMapKit.xcframework",
+      "identifier" : "macos-arm64_x86_64"
+    }
+  ],
+  "watchOS" : [
+    {
+      "hash" : "77e524f3e0539a1446b743fe887cca2f027c1a5844701efffbd8bacbbaf4eb6e",
+      "name" : "SDWebImage",
+      "container" : "SDWebImage.xcframework",
+      "identifier" : "watchos-arm64_i386_x86_64-simulator"
+    },
+    {
+      "hash" : "3c419e2d88d3ad833ffba666c94bac8b86e13f1bece00de27321a21dcbf3d0ea",
+      "name" : "SDWebImage",
+      "container" : "SDWebImage.xcframework",
+      "identifier" : "watchos-arm64_32_armv7k"
+    }
+  ],
+  "tvOS" : [
+    {
+      "hash" : "a337e97f541e63a25b6e6ef86c17c1be9fec5f156fc9b23389487a7fc96ab976",
+      "name" : "SDWebImage",
+      "container" : "SDWebImage.xcframework",
+      "identifier" : "tvos-arm64_x86_64-simulator"
+    },
+    {
+      "hash" : "b3dec13df0076e756130391a7b5b7263c0f939e239e611b26a58757f2405e6e7",
+      "name" : "SDWebImage",
+      "container" : "SDWebImage.xcframework",
+      "identifier" : "tvos-arm64"
+    },
+    {
+      "hash" : "2055ac5d1d361dab93a968b2687a01c57364fea39748055ea2a525e8484262d4",
+      "name" : "SDWebImageMapKit",
+      "container" : "SDWebImageMapKit.xcframework",
+      "identifier" : "tvos-arm64_x86_64-simulator"
+    },
+    {
+      "hash" : "f8816f99dedef801becfefbd4e1bae66db495b9812b10cf00a21e5d194152c54",
+      "name" : "SDWebImageMapKit",
+      "container" : "SDWebImageMapKit.xcframework",
+      "identifier" : "tvos-arm64"
+    }
+  ],
+  "commitish" : "5.13.2",
+  "iOS" : [
+    {
+      "hash" : "90536057b9f5dd2ddea7527a192de7300dc4515289a254b5be0139f07dfab6f0",
+      "name" : "SDWebImage",
+      "container" : "SDWebImage.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "hash" : "97cf837eaee620a7e7710a2ea5213e156f143ef0a65e5236728bf198dadc9f9b",
+      "name" : "SDWebImage",
+      "container" : "SDWebImage.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    },
+    {
+      "hash" : "a9264067395659ac56c5053267fda19d646bd94ef991ed5c51078ac1061695ef",
+      "name" : "SDWebImageMapKit",
+      "container" : "SDWebImageMapKit.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    },
+    {
+      "hash" : "47d9dd5e0035df51be1584de2e101046593d65e40b8699435b70119541f851bf",
+      "name" : "SDWebImageMapKit",
+      "container" : "SDWebImageMapKit.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    }
+  ]
+}

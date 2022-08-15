@@ -25,6 +25,11 @@
 		5B86A23928AA935E00126EDB /* BreedsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B86A23728AA935E00126EDB /* BreedsViewController.xib */; };
 		5B86A23B28AA936D00126EDB /* BreedsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A23A28AA936D00126EDB /* BreedsPresenter.swift */; };
 		5B86A23F28AA99AD00126EDB /* Breed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A23E28AA99AD00126EDB /* Breed.swift */; };
+		5B86A24228AA9B7000126EDB /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A24128AA9B7000126EDB /* UITableView+Extensions.swift */; };
+		5B86A24528AA9BD600126EDB /* NibLoadableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A24428AA9BD600126EDB /* NibLoadableCell.swift */; };
+		5B86A24928AA9C1400126EDB /* BreedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A24728AA9C1400126EDB /* BreedTableViewCell.swift */; };
+		5B86A24A28AA9C1400126EDB /* BreedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B86A24828AA9C1400126EDB /* BreedTableViewCell.xib */; };
+		5B86A24D28AA9EB700126EDB /* BreedListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A24C28AA9EB700126EDB /* BreedListCoordinator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +85,11 @@
 		5B86A23728AA935E00126EDB /* BreedsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedsViewController.xib; sourceTree = "<group>"; };
 		5B86A23A28AA936D00126EDB /* BreedsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsPresenter.swift; sourceTree = "<group>"; };
 		5B86A23E28AA99AD00126EDB /* Breed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breed.swift; sourceTree = "<group>"; };
+		5B86A24128AA9B7000126EDB /* UITableView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extensions.swift"; sourceTree = "<group>"; };
+		5B86A24428AA9BD600126EDB /* NibLoadableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NibLoadableCell.swift; sourceTree = "<group>"; };
+		5B86A24728AA9C1400126EDB /* BreedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedTableViewCell.swift; sourceTree = "<group>"; };
+		5B86A24828AA9C1400126EDB /* BreedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedTableViewCell.xib; sourceTree = "<group>"; };
+		5B86A24C28AA9EB700126EDB /* BreedListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,8 +143,9 @@
 		5B47231428AA83AF00BD7B9C /* WhatTypeOfDogIsThat */ = {
 			isa = PBXGroup;
 			children = (
-				5B86A23528AA934200126EDB /* Breeds */,
 				5B86A23228AA926200126EDB /* App Coordinator */,
+				5B86A23528AA934200126EDB /* Breeds */,
+				5B86A24028AA9B5800126EDB /* Extensions */,
 				5B47231528AA83AF00BD7B9C /* AppDelegate.swift */,
 				5B47231728AA83AF00BD7B9C /* SceneDelegate.swift */,
 				5B47231928AA83AF00BD7B9C /* ViewController.swift */,
@@ -183,10 +194,12 @@
 		5B86A23528AA934200126EDB /* Breeds */ = {
 			isa = PBXGroup;
 			children = (
+				5B86A24628AA9BF200126EDB /* Cells */,
 				5B86A23D28AA99A200126EDB /* Models */,
 				5B86A23628AA935E00126EDB /* BreedsViewController.swift */,
 				5B86A23728AA935E00126EDB /* BreedsViewController.xib */,
 				5B86A23A28AA936D00126EDB /* BreedsPresenter.swift */,
+				5B86A24C28AA9EB700126EDB /* BreedListCoordinator.swift */,
 			);
 			path = Breeds;
 			sourceTree = "<group>";
@@ -197,6 +210,32 @@
 				5B86A23E28AA99AD00126EDB /* Breed.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		5B86A24028AA9B5800126EDB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				5B86A24328AA9BC900126EDB /* Protocols */,
+				5B86A24128AA9B7000126EDB /* UITableView+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		5B86A24328AA9BC900126EDB /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5B86A24428AA9BD600126EDB /* NibLoadableCell.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		5B86A24628AA9BF200126EDB /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5B86A24728AA9C1400126EDB /* BreedTableViewCell.swift */,
+				5B86A24828AA9C1400126EDB /* BreedTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +345,7 @@
 			files = (
 				5B47232228AA83B100BD7B9C /* LaunchScreen.storyboard in Resources */,
 				5B86A23928AA935E00126EDB /* BreedsViewController.xib in Resources */,
+				5B86A24A28AA9C1400126EDB /* BreedTableViewCell.xib in Resources */,
 				5B47231F28AA83B100BD7B9C /* Assets.xcassets in Resources */,
 				5B47231D28AA83AF00BD7B9C /* Main.storyboard in Resources */,
 			);
@@ -332,12 +372,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B86A24928AA9C1400126EDB /* BreedTableViewCell.swift in Sources */,
 				5B47231A28AA83AF00BD7B9C /* ViewController.swift in Sources */,
 				5B86A23F28AA99AD00126EDB /* Breed.swift in Sources */,
 				5B86A23828AA935E00126EDB /* BreedsViewController.swift in Sources */,
+				5B86A24528AA9BD600126EDB /* NibLoadableCell.swift in Sources */,
+				5B86A24D28AA9EB700126EDB /* BreedListCoordinator.swift in Sources */,
 				5B86A23428AA927300126EDB /* AppCoordinator.swift in Sources */,
 				5B86A23B28AA936D00126EDB /* BreedsPresenter.swift in Sources */,
 				5B47231628AA83AF00BD7B9C /* AppDelegate.swift in Sources */,
+				5B86A24228AA9B7000126EDB /* UITableView+Extensions.swift in Sources */,
 				5B47231828AA83AF00BD7B9C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

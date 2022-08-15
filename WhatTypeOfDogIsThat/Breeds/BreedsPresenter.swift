@@ -23,4 +23,17 @@ class BreedsPresenter {
 
 // MARK: - BreedsViewPresenting
 
-extension BreedsPresenter: BreedsViewPresenting {}
+extension BreedsPresenter: BreedsViewPresenting {
+    
+    func didSelectItem(at row: Int) {
+        return
+    }
+    
+    func numberOfRows() -> Int {
+        10
+    }
+    
+    func item(for row: Int) -> [String : [String]] {
+        return ["test": []]
+    }
+}

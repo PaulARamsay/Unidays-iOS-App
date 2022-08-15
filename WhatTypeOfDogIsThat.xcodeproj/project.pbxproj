@@ -13,7 +13,6 @@
 		5B47231D28AA83AF00BD7B9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B47231B28AA83AF00BD7B9C /* Main.storyboard */; };
 		5B47231F28AA83B100BD7B9C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B47231E28AA83B100BD7B9C /* Assets.xcassets */; };
 		5B47232228AA83B100BD7B9C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5B47232028AA83B100BD7B9C /* LaunchScreen.storyboard */; };
-		5B47232D28AA83B200BD7B9C /* WhatTypeOfDogIsThatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47232C28AA83B200BD7B9C /* WhatTypeOfDogIsThatTests.swift */; };
 		5B47233728AA83B200BD7B9C /* WhatTypeOfDogIsThatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47233628AA83B200BD7B9C /* WhatTypeOfDogIsThatUITests.swift */; };
 		5B47233928AA83B200BD7B9C /* WhatTypeOfDogIsThatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47233828AA83B200BD7B9C /* WhatTypeOfDogIsThatUITestsLaunchTests.swift */; };
 		5B86A22D28AA914700126EDB /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22B28AA914700126EDB /* Alamofire.xcframework */; };
@@ -30,13 +29,21 @@
 		5B86A24928AA9C1400126EDB /* BreedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A24728AA9C1400126EDB /* BreedTableViewCell.swift */; };
 		5B86A24A28AA9C1400126EDB /* BreedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B86A24828AA9C1400126EDB /* BreedTableViewCell.xib */; };
 		5B86A24D28AA9EB700126EDB /* BreedListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A24C28AA9EB700126EDB /* BreedListCoordinator.swift */; };
-		5B86A25028AAA14000126EDB /* BreedsAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A24F28AAA14000126EDB /* BreedsAPIClient.swift */; };
+		5B86A25028AAA14000126EDB /* BreedsApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A24F28AAA14000126EDB /* BreedsApiClient.swift */; };
 		5B86A25328AABAB300126EDB /* SDWebImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A25128AABAB200126EDB /* SDWebImage.xcframework */; };
 		5B86A25428AABAB300126EDB /* SDWebImage.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A25128AABAB200126EDB /* SDWebImage.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B86A25528AABAB300126EDB /* SDWebImageMapKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A25228AABAB200126EDB /* SDWebImageMapKit.xcframework */; };
 		5B86A25628AABAB300126EDB /* SDWebImageMapKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A25228AABAB200126EDB /* SDWebImageMapKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B86A25828AABC0300126EDB /* BreedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A25728AABC0300126EDB /* BreedImages.swift */; };
 		5B86A25A28AAC18300126EDB /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A25928AAC18300126EDB /* Breeds.swift */; };
+		5B86A25E28AAD49000126EDB /* BreedsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A25D28AAD49000126EDB /* BreedsPresenterTests.swift */; };
+		5B86A25F28AAD4EE00126EDB /* BreedsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A23A28AA936D00126EDB /* BreedsPresenter.swift */; };
+		5B86A26028AAD55C00126EDB /* Breeds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A25928AAC18300126EDB /* Breeds.swift */; };
+		5B86A26128AAD5E800126EDB /* BreedsApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A24F28AAA14000126EDB /* BreedsApiClient.swift */; };
+		5B86A26528AAD61B00126EDB /* MockBreedsApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A26428AAD61B00126EDB /* MockBreedsApiClient.swift */; };
+		5B86A26628AAD6F100126EDB /* BreedImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A25728AABC0300126EDB /* BreedImages.swift */; };
+		5B86A26728AAD6F300126EDB /* BreedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A23E28AA99AD00126EDB /* BreedList.swift */; };
+		5B86A26928AADA9B00126EDB /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A26828AADA9B00126EDB /* URL+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +90,6 @@
 		5B47232128AA83B100BD7B9C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5B47232328AA83B100BD7B9C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B47232828AA83B200BD7B9C /* WhatTypeOfDogIsThatTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatTypeOfDogIsThatTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5B47232C28AA83B200BD7B9C /* WhatTypeOfDogIsThatTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTypeOfDogIsThatTests.swift; sourceTree = "<group>"; };
 		5B47233228AA83B200BD7B9C /* WhatTypeOfDogIsThatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatTypeOfDogIsThatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B47233628AA83B200BD7B9C /* WhatTypeOfDogIsThatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTypeOfDogIsThatUITests.swift; sourceTree = "<group>"; };
 		5B47233828AA83B200BD7B9C /* WhatTypeOfDogIsThatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTypeOfDogIsThatUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -99,11 +105,14 @@
 		5B86A24728AA9C1400126EDB /* BreedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedTableViewCell.swift; sourceTree = "<group>"; };
 		5B86A24828AA9C1400126EDB /* BreedTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedTableViewCell.xib; sourceTree = "<group>"; };
 		5B86A24C28AA9EB700126EDB /* BreedListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedListCoordinator.swift; sourceTree = "<group>"; };
-		5B86A24F28AAA14000126EDB /* BreedsAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsAPIClient.swift; sourceTree = "<group>"; };
+		5B86A24F28AAA14000126EDB /* BreedsApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsApiClient.swift; sourceTree = "<group>"; };
 		5B86A25128AABAB200126EDB /* SDWebImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDWebImage.xcframework; path = Carthage/Build/SDWebImage.xcframework; sourceTree = "<group>"; };
 		5B86A25228AABAB200126EDB /* SDWebImageMapKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SDWebImageMapKit.xcframework; path = Carthage/Build/SDWebImageMapKit.xcframework; sourceTree = "<group>"; };
 		5B86A25728AABC0300126EDB /* BreedImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImages.swift; sourceTree = "<group>"; };
 		5B86A25928AAC18300126EDB /* Breeds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Breeds.swift; sourceTree = "<group>"; };
+		5B86A25D28AAD49000126EDB /* BreedsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedsPresenterTests.swift; sourceTree = "<group>"; };
+		5B86A26428AAD61B00126EDB /* MockBreedsApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockBreedsApiClient.swift; sourceTree = "<group>"; };
+		5B86A26828AADA9B00126EDB /* URL+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,8 +172,6 @@
 				5B86A23228AA926200126EDB /* App Coordinator */,
 				5B86A23528AA934200126EDB /* Breeds */,
 				5B86A24028AA9B5800126EDB /* Extensions */,
-				5B47231528AA83AF00BD7B9C /* AppDelegate.swift */,
-				5B47231728AA83AF00BD7B9C /* SceneDelegate.swift */,
 				5B47231928AA83AF00BD7B9C /* ViewController.swift */,
 				5B47231B28AA83AF00BD7B9C /* Main.storyboard */,
 				5B47231E28AA83B100BD7B9C /* Assets.xcassets */,
@@ -177,7 +184,8 @@
 		5B47232B28AA83B200BD7B9C /* WhatTypeOfDogIsThatTests */ = {
 			isa = PBXGroup;
 			children = (
-				5B47232C28AA83B200BD7B9C /* WhatTypeOfDogIsThatTests.swift */,
+				5B86A26328AAD60400126EDB /* APIClient */,
+				5B86A26228AAD5F500126EDB /* Breeds */,
 			);
 			path = WhatTypeOfDogIsThatTests;
 			sourceTree = "<group>";
@@ -205,6 +213,8 @@
 		5B86A23228AA926200126EDB /* App Coordinator */ = {
 			isa = PBXGroup;
 			children = (
+				5B47231728AA83AF00BD7B9C /* SceneDelegate.swift */,
+				5B47231528AA83AF00BD7B9C /* AppDelegate.swift */,
 				5B86A23328AA927300126EDB /* AppCoordinator.swift */,
 			);
 			path = "App Coordinator";
@@ -236,6 +246,7 @@
 		5B86A24028AA9B5800126EDB /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				5B86A26828AADA9B00126EDB /* URL+Extensions.swift */,
 				5B86A24328AA9BC900126EDB /* Protocols */,
 				5B86A24128AA9B7000126EDB /* UITableView+Extensions.swift */,
 			);
@@ -262,9 +273,25 @@
 		5B86A24E28AAA13400126EDB /* API Client */ = {
 			isa = PBXGroup;
 			children = (
-				5B86A24F28AAA14000126EDB /* BreedsAPIClient.swift */,
+				5B86A24F28AAA14000126EDB /* BreedsApiClient.swift */,
 			);
 			path = "API Client";
+			sourceTree = "<group>";
+		};
+		5B86A26228AAD5F500126EDB /* Breeds */ = {
+			isa = PBXGroup;
+			children = (
+				5B86A25D28AAD49000126EDB /* BreedsPresenterTests.swift */,
+			);
+			path = Breeds;
+			sourceTree = "<group>";
+		};
+		5B86A26328AAD60400126EDB /* APIClient */ = {
+			isa = PBXGroup;
+			children = (
+				5B86A26428AAD61B00126EDB /* MockBreedsApiClient.swift */,
+			);
+			path = APIClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -408,7 +435,8 @@
 				5B86A23828AA935E00126EDB /* BreedsViewController.swift in Sources */,
 				5B86A24528AA9BD600126EDB /* NibLoadableCell.swift in Sources */,
 				5B86A24D28AA9EB700126EDB /* BreedListCoordinator.swift in Sources */,
-				5B86A25028AAA14000126EDB /* BreedsAPIClient.swift in Sources */,
+				5B86A26928AADA9B00126EDB /* URL+Extensions.swift in Sources */,
+				5B86A25028AAA14000126EDB /* BreedsApiClient.swift in Sources */,
 				5B86A23428AA927300126EDB /* AppCoordinator.swift in Sources */,
 				5B86A25828AABC0300126EDB /* BreedImages.swift in Sources */,
 				5B86A23B28AA936D00126EDB /* BreedsPresenter.swift in Sources */,
@@ -422,7 +450,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5B47232D28AA83B200BD7B9C /* WhatTypeOfDogIsThatTests.swift in Sources */,
+				5B86A26028AAD55C00126EDB /* Breeds.swift in Sources */,
+				5B86A26728AAD6F300126EDB /* BreedList.swift in Sources */,
+				5B86A25F28AAD4EE00126EDB /* BreedsPresenter.swift in Sources */,
+				5B86A26628AAD6F100126EDB /* BreedImages.swift in Sources */,
+				5B86A26528AAD61B00126EDB /* MockBreedsApiClient.swift in Sources */,
+				5B86A25E28AAD49000126EDB /* BreedsPresenterTests.swift in Sources */,
+				5B86A26128AAD5E800126EDB /* BreedsApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

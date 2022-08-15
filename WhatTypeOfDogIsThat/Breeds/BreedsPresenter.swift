@@ -11,6 +11,14 @@ protocol BreedsView: AnyObject {
     func reloadTableView()
 }
 
+protocol BreedsViewPresenting: AnyObject {
+    func numberOfRows() -> Int
+    func item(for row: Int) -> Breed
+    func didSelectItem(at row: Int)
+    func viewDidLoad()
+}
+
+
 protocol BreedsPresenterDelegate: AnyObject {
     func presenter(_ presenter: BreedsPresenter,
                    didTapBreed breed: Breed)

@@ -18,7 +18,8 @@ class BreedsApiClient: BreedsClient {
     
     func getBreedImageList(breedName: String,
                            completion: @escaping (BreedImages) -> ()) {
-        let urlAsString = "https://dog.ceo/api/breed/\(breedName)/images"
+        let urlAsString = URL.Endpoints.getBreedImageList
+            .replacingOccurrences(of: "{breed_name}", with: "\(breedName)")
         let request = AF.request(urlAsString)
 
         request.responseDecodable(of: BreedImages.self) { response in
@@ -28,7 +29,7 @@ class BreedsApiClient: BreedsClient {
     }
     
     func getBreedsList(completion: @escaping (BreedList) -> ()) {
-        let request = AF.request("https://dog.ceo/api/breeds/list/all")
+        let request = AF.request(URL.Endpoints.getBreedList)
 
         request.responseDecodable(of: BreedList.self) { response in
             guard let model = response.value else { return }

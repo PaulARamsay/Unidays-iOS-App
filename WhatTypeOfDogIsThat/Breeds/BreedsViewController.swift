@@ -7,13 +7,6 @@
 
 import UIKit
 
-protocol BreedsViewPresenting: AnyObject {
-    func numberOfRows() -> Int
-    func item(for row: Int) -> Breed
-    func didSelectItem(at row: Int)
-    func viewDidLoad()
-}
-
 class BreedsViewController: UIViewController {
 
     @IBOutlet private weak var tableView: UITableView!

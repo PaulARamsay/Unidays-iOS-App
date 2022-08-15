@@ -20,3 +20,7 @@ class BreedsPresenter {
         self.view = view
     }
 }
+
+// MARK: - BreedsViewPresenting
+
+extension BreedsPresenter: BreedsViewPresenting {}

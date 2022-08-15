@@ -7,7 +7,10 @@
 
 import UIKit
 
-protocol BreedsViewPresenting: AnyObject {}
+protocol BreedsViewPresenting: AnyObject {
+    func numberOfRows() -> Int
+    func item(for row: Int) -> [String : [String]]
+}
 
 class BreedsViewController: UIViewController {
 
@@ -15,7 +18,26 @@ class BreedsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // TODO: begin Breeds Implementation
+    }
+}
+
+// MARK: -  BreedsView
+
+extension BreedsViewController: BreedsView {}
+
+// MARK: - UITableViewDelegate
+
+extension BreedsViewController: UITableViewDelegate {}
+
+// MARK: - UITableViewDataSource
+
+extension BreedsViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // TODO
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        // TODO
     }
 }

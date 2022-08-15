@@ -28,6 +28,8 @@ class AppCoordinator: Coordinator {
 
     func start() {
         let view = BreedsViewController()
+        let presenter = BreedsPresenter(view: view)
+        view.presenter = presenter
         self.window.rootViewController = UINavigationController(rootViewController: view)
         self.window.makeKeyAndVisible()
     }

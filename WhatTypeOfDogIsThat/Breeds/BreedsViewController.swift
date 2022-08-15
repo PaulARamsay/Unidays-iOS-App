@@ -9,7 +9,7 @@ import UIKit
 
 protocol BreedsViewPresenting: AnyObject {
     func numberOfRows() -> Int
-    func item(for row: Int) -> String
+    func item(for row: Int) -> Breed
     func didSelectItem(at row: Int)
     func viewDidLoad()
 }
@@ -56,7 +56,7 @@ extension BreedsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let breed = self.presenter.item(for: indexPath.row)
         let cell = tableView.dequeue(cell: BreedTableViewCell.self, at: indexPath)
-        cell.setupCell(breedName: breed)
+        cell.setupCell(breed: breed)
         return cell
     }
 }

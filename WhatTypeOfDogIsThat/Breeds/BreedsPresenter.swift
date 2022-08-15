@@ -13,7 +13,7 @@ protocol BreedsView: AnyObject {
 
 protocol BreedsPresenterDelegate: AnyObject {
     func presenter(_ presenter: BreedsPresenter,
-                   didTapBreedWithName name: String)
+                   didTapBreed breed: Breed)
 }
 
 class BreedsPresenter {
@@ -22,7 +22,7 @@ class BreedsPresenter {
     private var apiClient: BreedsClient
     private var coordinatorDelegate: BreedsPresenterDelegate?
     
-    var breeds: [String] = []
+    var breeds: [Breed] = []
     
     // MARK: - Initialiser
     
@@ -35,10 +35,33 @@ class BreedsPresenter {
     }
     
     func viewDidLoad() {
-        self.apiClient.getBreedsList { breeds in
-            self.breeds = Array(breeds.breed.keys)
-            self.view?.reloadTableView()
+        self.apiClient.getBreedsList { BreedsDictionary in
+            let breedsList = Array(BreedsDictionary.breed.keys)
+            
+            let breedsListWithSubBreeds = breedsList.map { breedName in
+                return BreedData(breedName: breedName,
+                                 subBreeds: BreedsDictionary.breed[breedName] ?? [])
+            }
+            self.downloadBreedImageList(breedsList: breedsListWithSubBreeds)
         }
+    }
+    
+    func downloadBreedImageList(breedsList: [BreedData]) {
+        var breedsList = breedsList
+        let breed = breedsList.popLast()
+        
+        guard let breed = breed else {
+            self.view?.reloadTableView()
+            return
+        }
+        
+        self.apiClient.getBreedImageList(breedName: breed.breedName) { images in
+            self.breeds.append(.init(breedName: breed.breedName,
+                                     breedImageList: images.imageList,
+                                     subBreeds: breed.subBreeds))
+            self.downloadBreedImageList(breedsList: breedsList)
+        }
+        
     }
 }
 
@@ -47,14 +70,14 @@ class BreedsPresenter {
 extension BreedsPresenter: BreedsViewPresenting {
     
     func didSelectItem(at row: Int) {
-        self.coordinatorDelegate?.presenter(self, didTapBreedWithName: self.breeds[row])
+        self.coordinatorDelegate?.presenter(self, didTapBreed: self.breeds[row])
     }
     
     func numberOfRows() -> Int {
         return self.breeds.count
     }
     
-    func item(for row: Int) -> String {
+    func item(for row: Int) -> Breed {
         return self.breeds[row]
     }
 }

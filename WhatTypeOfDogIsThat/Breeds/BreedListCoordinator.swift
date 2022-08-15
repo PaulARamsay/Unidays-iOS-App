@@ -33,7 +33,7 @@ class BreedListCoordinator: Coordinator {
 
 extension BreedListCoordinator: BreedsPresenterDelegate {
     
-    func presenter(_ presenter: BreedsPresenter, didTapBreedWithName name: String) {
+    func presenter(_ presenter: BreedsPresenter, didTapBreed breed: Breed) {
         // TODO: Link to new breed details view controller
     }
 }

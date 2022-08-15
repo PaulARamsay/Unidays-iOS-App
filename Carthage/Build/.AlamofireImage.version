@@ -1,0 +1,60 @@
+{
+  "Mac" : [
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "3a3661b09e1427d5650f67fca3a00c70e2f87d186982f5a75060e31ff568d968",
+      "name" : "AlamofireImage",
+      "container" : "AlamofireImage.xcframework",
+      "identifier" : "macos-arm64_x86_64"
+    }
+  ],
+  "watchOS" : [
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "310aabb3ccc5ce70e865625e4cc0a7e4ab2ea3f841d32fe19cd7e9fc20c51efe",
+      "name" : "AlamofireImage",
+      "container" : "AlamofireImage.xcframework",
+      "identifier" : "watchos-arm64_32_armv7k"
+    },
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "4b4d9c144ce1e799e02340a0036fc47d4e8a9c1a662e59afbeb8df1e667adaaa",
+      "name" : "AlamofireImage",
+      "container" : "AlamofireImage.xcframework",
+      "identifier" : "watchos-arm64_i386_x86_64-simulator"
+    }
+  ],
+  "tvOS" : [
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "6a2a995be1a21e3e0b4507fa03e6d6a78accfd236f762288f9e5188c20f004c6",
+      "name" : "AlamofireImage",
+      "container" : "AlamofireImage.xcframework",
+      "identifier" : "tvos-arm64"
+    },
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "6ecbbd522890082b25c8c76a30f58a64220c786a0b24da76700874c81d653c3b",
+      "name" : "AlamofireImage",
+      "container" : "AlamofireImage.xcframework",
+      "identifier" : "tvos-arm64_x86_64-simulator"
+    }
+  ],
+  "commitish" : "4.2.0",
+  "iOS" : [
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "6fbe0f84253f264415a0fad962b5ec57a3a349b9683b73274e9d26e9714966f6",
+      "name" : "AlamofireImage",
+      "container" : "AlamofireImage.xcframework",
+      "identifier" : "ios-arm64_i386_x86_64-simulator"
+    },
+    {
+      "swiftToolchainVersion" : "5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)",
+      "hash" : "e440befa075e4ecc1e94140f4b7121441b6b4c872231406017726ab60c8af33b",
+      "name" : "AlamofireImage",
+      "container" : "AlamofireImage.xcframework",
+      "identifier" : "ios-arm64_armv7"
+    }
+  ]
+}

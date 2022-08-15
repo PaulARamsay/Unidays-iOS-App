@@ -16,6 +16,10 @@
 		5B47232D28AA83B200BD7B9C /* WhatTypeOfDogIsThatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47232C28AA83B200BD7B9C /* WhatTypeOfDogIsThatTests.swift */; };
 		5B47233728AA83B200BD7B9C /* WhatTypeOfDogIsThatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47233628AA83B200BD7B9C /* WhatTypeOfDogIsThatUITests.swift */; };
 		5B47233928AA83B200BD7B9C /* WhatTypeOfDogIsThatUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B47233828AA83B200BD7B9C /* WhatTypeOfDogIsThatUITestsLaunchTests.swift */; };
+		5B86A22D28AA914700126EDB /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22B28AA914700126EDB /* Alamofire.xcframework */; };
+		5B86A22E28AA914700126EDB /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22B28AA914700126EDB /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		5B86A22F28AA914700126EDB /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */; };
+		5B86A23028AA914700126EDB /* AlamofireImage.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,21 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		5B86A23128AA914700126EDB /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				5B86A23028AA914700126EDB /* AlamofireImage.xcframework in Embed Frameworks */,
+				5B86A22E28AA914700126EDB /* Alamofire.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		5B47231228AA83AF00BD7B9C /* WhatTypeOfDogIsThat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatTypeOfDogIsThat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B47231528AA83AF00BD7B9C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +68,8 @@
 		5B47233228AA83B200BD7B9C /* WhatTypeOfDogIsThatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatTypeOfDogIsThatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B47233628AA83B200BD7B9C /* WhatTypeOfDogIsThatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTypeOfDogIsThatUITests.swift; sourceTree = "<group>"; };
 		5B47233828AA83B200BD7B9C /* WhatTypeOfDogIsThatUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatTypeOfDogIsThatUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5B86A22B28AA914700126EDB /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
+		5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireImage.xcframework; path = Carthage/Build/AlamofireImage.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +77,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B86A22F28AA914700126EDB /* AlamofireImage.xcframework in Frameworks */,
+				5B86A22D28AA914700126EDB /* Alamofire.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +106,7 @@
 				5B47232B28AA83B200BD7B9C /* WhatTypeOfDogIsThatTests */,
 				5B47233528AA83B200BD7B9C /* WhatTypeOfDogIsThatUITests */,
 				5B47231328AA83AF00BD7B9C /* Products */,
+				5B86A22A28AA914600126EDB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +151,15 @@
 			path = WhatTypeOfDogIsThatUITests;
 			sourceTree = "<group>";
 		};
+		5B86A22A28AA914600126EDB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5B86A22B28AA914700126EDB /* Alamofire.xcframework */,
+				5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +170,7 @@
 				5B47230E28AA83AF00BD7B9C /* Sources */,
 				5B47230F28AA83AF00BD7B9C /* Frameworks */,
 				5B47231028AA83AF00BD7B9C /* Resources */,
+				5B86A23128AA914700126EDB /* Embed Frameworks */,
 			);
 			buildRules = (
 			);

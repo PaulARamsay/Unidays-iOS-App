@@ -12,20 +12,16 @@ class BreedListCoordinator: Coordinator {
     
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
-    var window: UIWindow
     
-    init(navigationController: UINavigationController,
-         window: UIWindow) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.window = window
     }
     
     func start() {
         let view = BreedsViewController()
         let presenter = BreedsPresenter(view: view, coordinatorDelegate: self)
         view.presenter = presenter
-        self.window.rootViewController = UINavigationController(rootViewController: view)
-        self.window.makeKeyAndVisible()
+        self.navigationController.pushViewController(view, animated: false)
     }
 }
 
@@ -34,6 +30,9 @@ class BreedListCoordinator: Coordinator {
 extension BreedListCoordinator: BreedsPresenterDelegate {
     
     func presenter(_ presenter: BreedsPresenter, didTapBreed breed: Breed) {
-        // TODO: Link to new breed details view controller
+        let view = BreedMoreInformationViewController()
+        let presenter = BreedMoreInformationPresenter(view: view, breed: breed)
+        view.presenter = presenter
+        self.navigationController.pushViewController(view, animated: true)
     }
 }

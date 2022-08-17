@@ -18,20 +18,14 @@ class AppCoordinator: Coordinator {
     
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
-    var window: UIWindow
 
-    private lazy var breedListCoordinator: Coordinator = {
-        return BreedListCoordinator(navigationController: self.navigationController, window: self.window)
-    }()
-    
-    init(navigationController: UINavigationController,
-         window: UIWindow) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.window = window
     }
 
     func start() {
-        let coordinator = self.breedListCoordinator
+        let coordinator = BreedListCoordinator(navigationController: self.navigationController)
+        self.childCoordinators.append(coordinator)
         coordinator.start()
     }
 }

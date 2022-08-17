@@ -9,7 +9,7 @@ import Foundation
 
 struct Breed {
     let breedName: String
-    let breedImageList: [String]
+    var breedImageList: [String]
     let subBreeds: [String]
 }
 

@@ -18,17 +18,14 @@ class AppCoordinator: Coordinator {
     
     var childCoordinators = [Coordinator]()
     var navigationController: UINavigationController
-    var window: UIWindow
 
-    init(navigationController: UINavigationController,
-         window: UIWindow) {
+    init(navigationController: UINavigationController) {
         self.navigationController = navigationController
-        self.window = window
     }
 
     func start() {
-        let view = BreedsViewController()
-        self.window.rootViewController = UINavigationController(rootViewController: view)
-        self.window.makeKeyAndVisible()
+        let coordinator = BreedListCoordinator(navigationController: self.navigationController)
+        self.childCoordinators.append(coordinator)
+        coordinator.start()
     }
 }

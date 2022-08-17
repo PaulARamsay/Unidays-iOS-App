@@ -16,6 +16,8 @@ protocol BreedsViewPresenting: AnyObject {
     func item(for row: Int) -> Breed
     func didSelectItem(at row: Int)
     func viewDidLoad()
+    
+    var title: String { get }
 }
 
 
@@ -76,6 +78,10 @@ class BreedsPresenter {
 // MARK: - BreedsViewPresenting
 
 extension BreedsPresenter: BreedsViewPresenting {
+    
+    var title: String {
+        return "Breeds List"
+    }
     
     func didSelectItem(at row: Int) {
         self.coordinatorDelegate?.presenter(self, didTapBreed: self.breeds[row])

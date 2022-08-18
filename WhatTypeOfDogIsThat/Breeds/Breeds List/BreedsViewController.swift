@@ -15,7 +15,9 @@ class BreedsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.register(cells: [BreedTableViewCell.self])
+        self.tableView.register(cells: [BreedTableViewCell.self,
+                                        BreedTitleTableViewCell.self,
+                                        ErrorTableViewCell.self])
         self.presenter.viewDidLoad()
         self.title = self.presenter.title
     }
@@ -86,9 +88,32 @@ extension BreedsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let breed = self.presenter.item(for: indexPath.row)
-        let cell = tableView.dequeue(cell: BreedTableViewCell.self, at: indexPath)
-        cell.setupCell(breed: breed)
-        return cell
+        let row = self.presenter.item(for: indexPath.row)
+        switch row {
+        case .breed(let breed):
+            let cell = tableView.dequeue(cell: BreedTableViewCell.self, at: indexPath)
+            cell.setupCell(breed: breed)
+            return cell
+            
+        case .header(let title, let description):
+            let cell = tableView.dequeue(cell: BreedTitleTableViewCell.self, at: indexPath)
+            cell.setupCell(title: title, description: description)
+            return cell
+            
+        case .error(let title, let description):
+            let cell = tableView.dequeue(cell: ErrorTableViewCell.self, at: indexPath)
+            cell.setupCell(title: title, description: description, delegate: self)
+            return cell
+            
+        }
+    }
+}
+
+// MARK: - ErrorTableViewCellDelegate
+
+extension BreedsViewController: ErrorTableViewCellDelegate {
+
+    func didTapRetry() {
+        self.presenter.viewDidLoad()
     }
 }

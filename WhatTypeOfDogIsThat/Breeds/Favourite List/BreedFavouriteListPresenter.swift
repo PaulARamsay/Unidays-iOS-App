@@ -20,6 +20,8 @@ class BreedFavouriteListPresenter {
     
     private var favouriteList: [String] = []
     
+    private var rows: [BreedsPresenter.RowItem] = []
+    
     // MARK: - Initialiser
     
     init(view: BreedsView,
@@ -33,8 +35,19 @@ class BreedFavouriteListPresenter {
     }
     
     private func setupFavouritesList() {
+        self.rows.removeAll()
         self.favouriteList = favourites.favouriteBreeds()
+        
+        guard !self.favouriteList.isEmpty else {
+            self.rows.append(.header(title: "No Favourites",
+                                     description: "You haven't selected any favourites or you are having network issues :("))
+            self.view?.reloadTableView()
+            return
+        }
+        
         self.breeds = self.breeds.filter { self.favouriteList.contains($0.breedName) }
+        self.rows += self.breeds.compactMap { .breed(breed: $0) }
+        
         self.view?.reloadTableView()
     }
 }
@@ -47,7 +60,6 @@ extension BreedFavouriteListPresenter: BreedsViewPresenting {
         self.setupFavouritesList()
     }
     
-    
     func viewWillAppear() {
         self.setupFavouritesList()
     }
@@ -57,15 +69,22 @@ extension BreedFavouriteListPresenter: BreedsViewPresenting {
     }
     
     func didSelectItem(at row: Int) {
-        self.coordinatorDelegate?.presenter(self, didTapBreed: self.breeds[row])
+        switch self.rows[row] {
+        case .breed(let breed):
+            self.coordinatorDelegate?.presenter(self, didTapBreed: breed)
+            
+        default:
+            return
+            
+        }
     }
     
     func numberOfRows() -> Int {
-        return self.breeds.count
+        return self.rows.count
     }
     
-    func item(for row: Int) -> Breed {
-        return self.breeds[row]
+    func item(for row: Int) -> BreedsPresenter.RowItem {
+        return self.rows[row]
     }
     
     func didTapViewFavourites() {

@@ -12,15 +12,17 @@ class MockBreedsApiClient: BreedsClient {
     var didRequestBreedsList = false
     var didRequestImageList = false
     
-    func getBreedsList(completion: @escaping (BreedList) -> ()) {
+    var getBreedsListStubbed: BreedList? = .init(breed: ["test" : ["test sub breed"]])
+    var getBreedImageListStubbed: BreedImages? = .init(imageList: [""])
+    
+    func getBreedsList(completion: @escaping (BreedList?) -> ()) {
         self.didRequestBreedsList = true
-        completion(.init(breed: ["test" : ["test sub breed"]]))
+        completion(self.getBreedsListStubbed)
     }
     
     func getBreedImageList(breedName: String,
-                           completion: @escaping(BreedImages) -> ()) {
+                           completion: @escaping(BreedImages?) -> ()) {
         self.didRequestImageList = true
-        completion(.init(imageList: [""]))
-        
+        completion(self.getBreedImageListStubbed)
     }
 }

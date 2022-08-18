@@ -19,6 +19,15 @@ class BreedsViewController: UIViewController {
         self.presenter.viewDidLoad()
         self.title = self.presenter.title
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.presenter.viewWillAppear()
+    }
+    
+    @objc func viewFavouritesButtonTapped() {
+        self.presenter.didTapViewFavourites()
+    }
 }
 
 // MARK: -  BreedsView
@@ -26,7 +35,16 @@ class BreedsViewController: UIViewController {
 extension BreedsViewController: BreedsView {
     
     func reloadTableView() {
+        self.tableView.isScrollEnabled = self.presenter.numberOfRows() != 0
         self.tableView.reloadData()
+    }
+    
+    func addViewFavouritesButton() {
+        let item = UIBarButtonItem(image: UIImage(systemName: "star.fill"),
+                                   style: .done,
+                                   target: self,
+                                   action: #selector(self.viewFavouritesButtonTapped))
+        self.navigationItem.setRightBarButton(item, animated: true)
     }
 }
 
@@ -35,19 +53,23 @@ extension BreedsViewController: BreedsView {
 extension BreedsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
         self.presenter.didSelectItem(at: indexPath.row)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.backgroundColor = .gray.withAlphaComponent(0.3)
-        let indicatorView = UIActivityIndicatorView(style: .large)
-        indicatorView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(indicatorView)
-        indicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        indicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        indicatorView.startAnimating()
-        return view
+        if self.presenter.numberOfRows() == 0 {
+            let view = UIView()
+            view.backgroundColor = .none
+            let indicatorView = UIActivityIndicatorView(style: .large)
+            indicatorView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(indicatorView)
+            indicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            indicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            indicatorView.startAnimating()
+            return view
+        }
+        return nil
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

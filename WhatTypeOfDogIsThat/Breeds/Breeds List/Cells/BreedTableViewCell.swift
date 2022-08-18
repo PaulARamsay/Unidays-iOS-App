@@ -14,9 +14,17 @@ class BreedTableViewCell: UITableViewCell {
     @IBOutlet weak var breedTextLabel: UILabel!
     @IBOutlet weak var subBreedsTextLabel: UILabel!
     
-    func setupCell(breed: Breed) {
+    var isFavourited: Bool = false {
+        didSet {
+            self.setupCellFor(favourited: isFavourited)
+        }
+    }
+    
+    func setupCell(breed: Breed,
+                   favourited: Bool = false) {
+        self.isFavourited = favourited
         self.breedTextLabel.text = breed.breedName
-        self.breedImageView.layer.cornerRadius = 50
+        self.breedImageView.layer.cornerRadius = 35
         self.subBreedsTextLabel.text = breed.subBreeds.count == 0 ? "" : "\(breed.subBreeds.count) Sub-breeds!"
         
         guard let imageName = breed.breedImageList.first,
@@ -25,6 +33,11 @@ class BreedTableViewCell: UITableViewCell {
         self.breedImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         self.breedImageView.sd_setImage(with: breedImageUrl)
         self.accessoryType = .disclosureIndicator
+    }
+    
+    private func setupCellFor(favourited: Bool) {
+        self.breedImageView.layer.borderWidth = 3
+        self.breedImageView.layer.borderColor = !favourited ? UIColor.blue.cgColor : .none
     }
 }
 

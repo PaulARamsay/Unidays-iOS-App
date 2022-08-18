@@ -31,6 +31,20 @@
 		5B4A79B828AD77C400938C13 /* BreedTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B86A24828AA9C1400126EDB /* BreedTableViewCell.xib */; };
 		5B4A79B928AD77D800938C13 /* NibLoadableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A24428AA9BD600126EDB /* NibLoadableCell.swift */; };
 		5B4A79BA28AD77E700938C13 /* UITableView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B86A24128AA9B7000126EDB /* UITableView+Extensions.swift */; };
+		5B4A79BE28AD8AFD00938C13 /* BreedTitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79BC28AD8AFD00938C13 /* BreedTitleTableViewCell.swift */; };
+		5B4A79BF28AD8AFD00938C13 /* BreedTitleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4A79BD28AD8AFD00938C13 /* BreedTitleTableViewCell.xib */; };
+		5B4A79C128AD8CB400938C13 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79C028AD8CB400938C13 /* UserDefaults+Extensions.swift */; };
+		5B4A79C428AE204700938C13 /* BreedFavouriteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79C328AE204700938C13 /* BreedFavouriteListPresenter.swift */; };
+		5B4A79C728AE2A9600938C13 /* FavouriteButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79C528AE2A9600938C13 /* FavouriteButtonTableViewCell.swift */; };
+		5B4A79C828AE2A9600938C13 /* FavouriteButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4A79C628AE2A9600938C13 /* FavouriteButtonTableViewCell.xib */; };
+		5B4A79CC28AE343100938C13 /* NoFavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79CA28AE343100938C13 /* NoFavouritesTableViewCell.swift */; };
+		5B4A79CD28AE343100938C13 /* NoFavouritesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4A79CB28AE343100938C13 /* NoFavouritesTableViewCell.xib */; };
+		5B4A79D028AE449F00938C13 /* BreedFavouriteListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79CF28AE449F00938C13 /* BreedFavouriteListPresenterTests.swift */; };
+		5B4A79D128AE44DE00938C13 /* BreedFavouriteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79C328AE204700938C13 /* BreedFavouriteListPresenter.swift */; };
+		5B4A79D228AE44F300938C13 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79C028AD8CB400938C13 /* UserDefaults+Extensions.swift */; };
+		5B4A79D428AE458B00938C13 /* MockFavourite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79D328AE458B00938C13 /* MockFavourite.swift */; };
+		5B4A79D528AE4B5C00938C13 /* FavouriteButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79C528AE2A9600938C13 /* FavouriteButtonTableViewCell.swift */; };
+		5B4A79D828AE4DB300938C13 /* FavouriteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79D728AE4DB300938C13 /* FavouriteTests.swift */; };
 		5B86A22D28AA914700126EDB /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22B28AA914700126EDB /* Alamofire.xcframework */; };
 		5B86A22E28AA914700126EDB /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22B28AA914700126EDB /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B86A22F28AA914700126EDB /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */; };
@@ -117,6 +131,17 @@
 		5B4A79AC28AD6C2A00938C13 /* BreedImageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedImageTableViewCell.swift; sourceTree = "<group>"; };
 		5B4A79AD28AD6C2A00938C13 /* BreedImageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedImageTableViewCell.xib; sourceTree = "<group>"; };
 		5B4A79B128AD74AB00938C13 /* BreedInfoPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedInfoPresenterTests.swift; sourceTree = "<group>"; };
+		5B4A79BC28AD8AFD00938C13 /* BreedTitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedTitleTableViewCell.swift; sourceTree = "<group>"; };
+		5B4A79BD28AD8AFD00938C13 /* BreedTitleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BreedTitleTableViewCell.xib; sourceTree = "<group>"; };
+		5B4A79C028AD8CB400938C13 /* UserDefaults+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extensions.swift"; sourceTree = "<group>"; };
+		5B4A79C328AE204700938C13 /* BreedFavouriteListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedFavouriteListPresenter.swift; sourceTree = "<group>"; };
+		5B4A79C528AE2A9600938C13 /* FavouriteButtonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteButtonTableViewCell.swift; sourceTree = "<group>"; };
+		5B4A79C628AE2A9600938C13 /* FavouriteButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteButtonTableViewCell.xib; sourceTree = "<group>"; };
+		5B4A79CA28AE343100938C13 /* NoFavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavouritesTableViewCell.swift; sourceTree = "<group>"; };
+		5B4A79CB28AE343100938C13 /* NoFavouritesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoFavouritesTableViewCell.xib; sourceTree = "<group>"; };
+		5B4A79CF28AE449F00938C13 /* BreedFavouriteListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedFavouriteListPresenterTests.swift; sourceTree = "<group>"; };
+		5B4A79D328AE458B00938C13 /* MockFavourite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavourite.swift; sourceTree = "<group>"; };
+		5B4A79D728AE4DB300938C13 /* FavouriteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTests.swift; sourceTree = "<group>"; };
 		5B86A22B28AA914700126EDB /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireImage.xcframework; path = Carthage/Build/AlamofireImage.xcframework; sourceTree = "<group>"; };
 		5B86A23328AA927300126EDB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -210,6 +235,7 @@
 			children = (
 				5B86A26328AAD60400126EDB /* APIClient */,
 				5B86A26228AAD5F500126EDB /* Breeds */,
+				5B4A79D628AE4D9900938C13 /* Protocols */,
 			);
 			path = WhatTypeOfDogIsThatTests;
 			sourceTree = "<group>";
@@ -253,6 +279,8 @@
 				5B4A79A728AD62DE00938C13 /* BreedNameTableViewCell.xib */,
 				5B4A79AC28AD6C2A00938C13 /* BreedImageTableViewCell.swift */,
 				5B4A79AD28AD6C2A00938C13 /* BreedImageTableViewCell.xib */,
+				5B4A79BC28AD8AFD00938C13 /* BreedTitleTableViewCell.swift */,
+				5B4A79BD28AD8AFD00938C13 /* BreedTitleTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -271,6 +299,42 @@
 				5B4A79B128AD74AB00938C13 /* BreedInfoPresenterTests.swift */,
 			);
 			path = BreedMoreInfo;
+			sourceTree = "<group>";
+		};
+		5B4A79C228AE201E00938C13 /* Favourite List */ = {
+			isa = PBXGroup;
+			children = (
+				5B4A79C928AE33F800938C13 /* Cells */,
+				5B4A79C328AE204700938C13 /* BreedFavouriteListPresenter.swift */,
+			);
+			path = "Favourite List";
+			sourceTree = "<group>";
+		};
+		5B4A79C928AE33F800938C13 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5B4A79C528AE2A9600938C13 /* FavouriteButtonTableViewCell.swift */,
+				5B4A79C628AE2A9600938C13 /* FavouriteButtonTableViewCell.xib */,
+				5B4A79CA28AE343100938C13 /* NoFavouritesTableViewCell.swift */,
+				5B4A79CB28AE343100938C13 /* NoFavouritesTableViewCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		5B4A79CE28AE449000938C13 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				5B4A79CF28AE449F00938C13 /* BreedFavouriteListPresenterTests.swift */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		5B4A79D628AE4D9900938C13 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5B4A79D728AE4DB300938C13 /* FavouriteTests.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 		5B86A22A28AA914600126EDB /* Frameworks */ = {
@@ -298,6 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				5B86A24C28AA9EB700126EDB /* BreedListCoordinator.swift */,
+				5B4A79C228AE201E00938C13 /* Favourite List */,
 				5B4A799C28ACD96200938C13 /* BreedInfo */,
 				5B4A79A328ACDBF600938C13 /* Breeds List */,
 			);
@@ -320,6 +385,7 @@
 				5B86A26828AADA9B00126EDB /* URL+Extensions.swift */,
 				5B86A24328AA9BC900126EDB /* Protocols */,
 				5B86A24128AA9B7000126EDB /* UITableView+Extensions.swift */,
+				5B4A79C028AD8CB400938C13 /* UserDefaults+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -352,6 +418,7 @@
 		5B86A26228AAD5F500126EDB /* Breeds */ = {
 			isa = PBXGroup;
 			children = (
+				5B4A79CE28AE449000938C13 /* Favourites */,
 				5B4A79BB28AD78E500938C13 /* BreedMoreInfo */,
 				5B4A79B028AD742900938C13 /* BreedsList */,
 			);
@@ -362,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				5B86A26428AAD61B00126EDB /* MockBreedsApiClient.swift */,
+				5B4A79D328AE458B00938C13 /* MockFavourite.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -473,10 +541,13 @@
 			files = (
 				5B47232228AA83B100BD7B9C /* LaunchScreen.storyboard in Resources */,
 				5B86A23928AA935E00126EDB /* BreedsViewController.xib in Resources */,
+				5B4A79CD28AE343100938C13 /* NoFavouritesTableViewCell.xib in Resources */,
+				5B4A79C828AE2A9600938C13 /* FavouriteButtonTableViewCell.xib in Resources */,
 				5B86A24A28AA9C1400126EDB /* BreedTableViewCell.xib in Resources */,
 				5B4A79A928AD62DE00938C13 /* BreedNameTableViewCell.xib in Resources */,
 				5B4A79AF28AD6C2A00938C13 /* BreedImageTableViewCell.xib in Resources */,
 				5B4A79A228ACD99300938C13 /* BreedMoreInformationViewController.xib in Resources */,
+				5B4A79BF28AD8AFD00938C13 /* BreedTitleTableViewCell.xib in Resources */,
 				5B47231F28AA83B100BD7B9C /* Assets.xcassets in Resources */,
 				5B47231D28AA83AF00BD7B9C /* Main.storyboard in Resources */,
 			);
@@ -508,10 +579,13 @@
 				5B86A24928AA9C1400126EDB /* BreedTableViewCell.swift in Sources */,
 				5B47231A28AA83AF00BD7B9C /* ViewController.swift in Sources */,
 				5B86A23F28AA99AD00126EDB /* BreedList.swift in Sources */,
+				5B4A79C728AE2A9600938C13 /* FavouriteButtonTableViewCell.swift in Sources */,
+				5B4A79C128AD8CB400938C13 /* UserDefaults+Extensions.swift in Sources */,
 				5B86A23828AA935E00126EDB /* BreedsViewController.swift in Sources */,
 				5B86A24528AA9BD600126EDB /* NibLoadableCell.swift in Sources */,
 				5B86A24D28AA9EB700126EDB /* BreedListCoordinator.swift in Sources */,
 				5B4A79A828AD62DE00938C13 /* BreedNameTableViewCell.swift in Sources */,
+				5B4A79CC28AE343100938C13 /* NoFavouritesTableViewCell.swift in Sources */,
 				5B4A79A128ACD99300938C13 /* BreedMoreInformationViewController.swift in Sources */,
 				5B86A26928AADA9B00126EDB /* URL+Extensions.swift in Sources */,
 				5B4A79AE28AD6C2A00938C13 /* BreedImageTableViewCell.swift in Sources */,
@@ -519,8 +593,10 @@
 				5B4A799E28ACD97C00938C13 /* BreedMoreInformationPresenter.swift in Sources */,
 				5B86A23428AA927300126EDB /* AppCoordinator.swift in Sources */,
 				5B86A25828AABC0300126EDB /* BreedImages.swift in Sources */,
+				5B4A79BE28AD8AFD00938C13 /* BreedTitleTableViewCell.swift in Sources */,
 				5B86A23B28AA936D00126EDB /* BreedsPresenter.swift in Sources */,
 				5B47231628AA83AF00BD7B9C /* AppDelegate.swift in Sources */,
+				5B4A79C428AE204700938C13 /* BreedFavouriteListPresenter.swift in Sources */,
 				5B86A24228AA9B7000126EDB /* UITableView+Extensions.swift in Sources */,
 				5B47231828AA83AF00BD7B9C /* SceneDelegate.swift in Sources */,
 			);
@@ -535,9 +611,15 @@
 				5B4A79B728AD77C000938C13 /* BreedImageTableViewCell.swift in Sources */,
 				5B4A79B628AD77AB00938C13 /* BreedNameTableViewCell.swift in Sources */,
 				5B86A26028AAD55C00126EDB /* Breeds.swift in Sources */,
+				5B4A79D528AE4B5C00938C13 /* FavouriteButtonTableViewCell.swift in Sources */,
+				5B4A79D428AE458B00938C13 /* MockFavourite.swift in Sources */,
+				5B4A79D128AE44DE00938C13 /* BreedFavouriteListPresenter.swift in Sources */,
+				5B4A79D828AE4DB300938C13 /* FavouriteTests.swift in Sources */,
+				5B4A79D028AE449F00938C13 /* BreedFavouriteListPresenterTests.swift in Sources */,
 				5B4A79B228AD74AB00938C13 /* BreedInfoPresenterTests.swift in Sources */,
 				5B86A26728AAD6F300126EDB /* BreedList.swift in Sources */,
 				5B86A25F28AAD4EE00126EDB /* BreedsPresenter.swift in Sources */,
+				5B4A79D228AE44F300938C13 /* UserDefaults+Extensions.swift in Sources */,
 				5B86A26628AAD6F100126EDB /* BreedImages.swift in Sources */,
 				5B86A26528AAD61B00126EDB /* MockBreedsApiClient.swift in Sources */,
 				5B4A79B328AD757F00938C13 /* BreedMoreInformationViewController.swift in Sources */,

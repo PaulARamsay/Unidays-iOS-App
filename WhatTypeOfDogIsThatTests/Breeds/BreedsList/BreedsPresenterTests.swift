@@ -50,9 +50,14 @@ class BreedsPresenterTests: XCTestCase {
 private class MockView: BreedsView {
     
     var didReloadTableView = false
+    var didAddViewFavouriteButton = false
     
     func reloadTableView() {
         self.didReloadTableView = true
+    }
+    
+    func addViewFavouritesButton() {
+        self.didAddViewFavouriteButton = true
     }
 }
 
@@ -65,6 +70,10 @@ private class MockCoordinatorDelegate: BreedsPresenterDelegate {
     func presenter(_ presenter: BreedsPresenter,
                    didTapBreed breed: Breed) {
         self.didTapViewMore = true
+    }
+    
+    func presenter(_ presenter: BreedsPresenter, tappedToViewFavouritesWith breedsList: [Breed]) {
+        // not needed,
     }
 }
 

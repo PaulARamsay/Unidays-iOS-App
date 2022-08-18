@@ -13,7 +13,8 @@ protocol BreedMoreInformationPresenting: AnyObject {
     func item(for section: Int, row: Int) -> BreedMoreInformationPresenter.SectionItem.RowItem
     func numberOfSections() -> Int
     func titleFor(section: Int) -> String
-    func numberOfRows(in section: Int) -> Int 
+    func numberOfRows(in section: Int) -> Int
+    func didTapFavourite(favourited: Bool)
 }
 
 class BreedMoreInformationPresenter {
@@ -25,20 +26,28 @@ class BreedMoreInformationPresenter {
         enum RowItem {
             case subBreed(breedName: String)
             case image(imageName: String)
+            case favouriteButton(favourited: Bool)
         }
     }
     
     private weak var view: BreedMoreInformationView?
     private var breed: Breed
     private var sections: [SectionItem] = []
+    private let favourites: Favourited
     
     init(view: BreedMoreInformationView,
+         favourite: Favourited = UserDefaults.standard,
          breed: Breed) {
         self.view = view
+        self.favourites = favourite
         self.breed = breed
     }
     
     private func setupSections() {
+        let breedFavourited = self.favourites.breedIsFavourited(breedName: self.breed.breedName)
+        self.sections.append(.init(title: "Favourite",
+                                   rows: [.favouriteButton(favourited: breedFavourited)]))
+        
         let rowItems = self.breed.subBreeds.compactMap {
             SectionItem.RowItem.subBreed(breedName: $0)
         }
@@ -51,6 +60,7 @@ class BreedMoreInformationPresenter {
             SectionItem(title: "",
                         rows: [SectionItem.RowItem.image(imageName: $0)])
         }
+        
         self.sections += imageSection
         
         self.view?.reloadTableView()
@@ -58,6 +68,14 @@ class BreedMoreInformationPresenter {
 }
 
 extension BreedMoreInformationPresenter: BreedMoreInformationPresenting {
+    
+    func didTapFavourite(favourited: Bool) {
+        if favourited {
+            self.favourites.addFavouriteBreed(breedName: self.breed.breedName)
+        } else {
+            self.favourites.removeFavouriteBreed(breedName: self.breed.breedName)
+        }
+    }
     
     func numberOfRows(in section: Int) -> Int {
         self.sections[section].rows.count

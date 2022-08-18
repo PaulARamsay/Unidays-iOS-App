@@ -10,7 +10,7 @@ import Foundation
 struct Breed {
     let breedName: String
     var breedImageList: [String]
-    let subBreeds: [String]
+    let subBreeds: [String]    
 }
 
 struct BreedData {

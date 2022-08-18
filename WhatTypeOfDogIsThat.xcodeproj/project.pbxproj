@@ -39,6 +39,12 @@
 		5B4A79C828AE2A9600938C13 /* FavouriteButtonTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4A79C628AE2A9600938C13 /* FavouriteButtonTableViewCell.xib */; };
 		5B4A79CC28AE343100938C13 /* NoFavouritesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79CA28AE343100938C13 /* NoFavouritesTableViewCell.swift */; };
 		5B4A79CD28AE343100938C13 /* NoFavouritesTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B4A79CB28AE343100938C13 /* NoFavouritesTableViewCell.xib */; };
+		5B4A79D028AE449F00938C13 /* BreedFavouriteListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79CF28AE449F00938C13 /* BreedFavouriteListPresenterTests.swift */; };
+		5B4A79D128AE44DE00938C13 /* BreedFavouriteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79C328AE204700938C13 /* BreedFavouriteListPresenter.swift */; };
+		5B4A79D228AE44F300938C13 /* UserDefaults+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79C028AD8CB400938C13 /* UserDefaults+Extensions.swift */; };
+		5B4A79D428AE458B00938C13 /* MockFavourite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79D328AE458B00938C13 /* MockFavourite.swift */; };
+		5B4A79D528AE4B5C00938C13 /* FavouriteButtonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79C528AE2A9600938C13 /* FavouriteButtonTableViewCell.swift */; };
+		5B4A79D828AE4DB300938C13 /* FavouriteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4A79D728AE4DB300938C13 /* FavouriteTests.swift */; };
 		5B86A22D28AA914700126EDB /* Alamofire.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22B28AA914700126EDB /* Alamofire.xcframework */; };
 		5B86A22E28AA914700126EDB /* Alamofire.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22B28AA914700126EDB /* Alamofire.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5B86A22F28AA914700126EDB /* AlamofireImage.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */; };
@@ -133,6 +139,9 @@
 		5B4A79C628AE2A9600938C13 /* FavouriteButtonTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavouriteButtonTableViewCell.xib; sourceTree = "<group>"; };
 		5B4A79CA28AE343100938C13 /* NoFavouritesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoFavouritesTableViewCell.swift; sourceTree = "<group>"; };
 		5B4A79CB28AE343100938C13 /* NoFavouritesTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoFavouritesTableViewCell.xib; sourceTree = "<group>"; };
+		5B4A79CF28AE449F00938C13 /* BreedFavouriteListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedFavouriteListPresenterTests.swift; sourceTree = "<group>"; };
+		5B4A79D328AE458B00938C13 /* MockFavourite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockFavourite.swift; sourceTree = "<group>"; };
+		5B4A79D728AE4DB300938C13 /* FavouriteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTests.swift; sourceTree = "<group>"; };
 		5B86A22B28AA914700126EDB /* Alamofire.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Alamofire.xcframework; path = Carthage/Build/Alamofire.xcframework; sourceTree = "<group>"; };
 		5B86A22C28AA914700126EDB /* AlamofireImage.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = AlamofireImage.xcframework; path = Carthage/Build/AlamofireImage.xcframework; sourceTree = "<group>"; };
 		5B86A23328AA927300126EDB /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
@@ -226,6 +235,7 @@
 			children = (
 				5B86A26328AAD60400126EDB /* APIClient */,
 				5B86A26228AAD5F500126EDB /* Breeds */,
+				5B4A79D628AE4D9900938C13 /* Protocols */,
 			);
 			path = WhatTypeOfDogIsThatTests;
 			sourceTree = "<group>";
@@ -311,6 +321,22 @@
 			path = Cells;
 			sourceTree = "<group>";
 		};
+		5B4A79CE28AE449000938C13 /* Favourites */ = {
+			isa = PBXGroup;
+			children = (
+				5B4A79CF28AE449F00938C13 /* BreedFavouriteListPresenterTests.swift */,
+			);
+			path = Favourites;
+			sourceTree = "<group>";
+		};
+		5B4A79D628AE4D9900938C13 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				5B4A79D728AE4DB300938C13 /* FavouriteTests.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		5B86A22A28AA914600126EDB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -392,6 +418,7 @@
 		5B86A26228AAD5F500126EDB /* Breeds */ = {
 			isa = PBXGroup;
 			children = (
+				5B4A79CE28AE449000938C13 /* Favourites */,
 				5B4A79BB28AD78E500938C13 /* BreedMoreInfo */,
 				5B4A79B028AD742900938C13 /* BreedsList */,
 			);
@@ -402,6 +429,7 @@
 			isa = PBXGroup;
 			children = (
 				5B86A26428AAD61B00126EDB /* MockBreedsApiClient.swift */,
+				5B4A79D328AE458B00938C13 /* MockFavourite.swift */,
 			);
 			path = APIClient;
 			sourceTree = "<group>";
@@ -583,9 +611,15 @@
 				5B4A79B728AD77C000938C13 /* BreedImageTableViewCell.swift in Sources */,
 				5B4A79B628AD77AB00938C13 /* BreedNameTableViewCell.swift in Sources */,
 				5B86A26028AAD55C00126EDB /* Breeds.swift in Sources */,
+				5B4A79D528AE4B5C00938C13 /* FavouriteButtonTableViewCell.swift in Sources */,
+				5B4A79D428AE458B00938C13 /* MockFavourite.swift in Sources */,
+				5B4A79D128AE44DE00938C13 /* BreedFavouriteListPresenter.swift in Sources */,
+				5B4A79D828AE4DB300938C13 /* FavouriteTests.swift in Sources */,
+				5B4A79D028AE449F00938C13 /* BreedFavouriteListPresenterTests.swift in Sources */,
 				5B4A79B228AD74AB00938C13 /* BreedInfoPresenterTests.swift in Sources */,
 				5B86A26728AAD6F300126EDB /* BreedList.swift in Sources */,
 				5B86A25F28AAD4EE00126EDB /* BreedsPresenter.swift in Sources */,
+				5B4A79D228AE44F300938C13 /* UserDefaults+Extensions.swift in Sources */,
 				5B86A26628AAD6F100126EDB /* BreedImages.swift in Sources */,
 				5B86A26528AAD61B00126EDB /* MockBreedsApiClient.swift in Sources */,
 				5B4A79B328AD757F00938C13 /* BreedMoreInformationViewController.swift in Sources */,

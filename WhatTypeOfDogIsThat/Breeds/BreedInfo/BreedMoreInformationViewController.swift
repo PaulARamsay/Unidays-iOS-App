@@ -18,17 +18,6 @@ class BreedMoreInformationViewController: UIViewController {
     
     var presenter: BreedMoreInformationPresenting!
     
-    var favourited: Bool = false {
-        didSet {
-            let systemImageName = self.favourited ? "star" : "star.filled"
-            let item = UIBarButtonItem(image: UIImage(systemName: systemImageName),
-                                       style: .done,
-                                       target: self,
-                                       action: #selector(didTapFavouriteButton))
-            self.navigationItem.rightBarButtonItems = [item]
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.presenter.viewDidLoad()
@@ -36,11 +25,6 @@ class BreedMoreInformationViewController: UIViewController {
                                              BreedImageTableViewCell.self,
                                              FavouriteButtonTableViewCell.self])
         self.title = self.presenter.title()
-        self.favourited = false
-    }
-    
-    @objc func didTapFavouriteButton() {
-        self.favourited.toggle()
     }
 }
 

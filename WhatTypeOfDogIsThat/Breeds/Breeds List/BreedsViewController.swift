@@ -35,6 +35,7 @@ class BreedsViewController: UIViewController {
 extension BreedsViewController: BreedsView {
     
     func reloadTableView() {
+        self.tableView.isScrollEnabled = self.presenter.numberOfRows() != 0
         self.tableView.reloadData()
     }
     
@@ -57,15 +58,18 @@ extension BreedsViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let view = UIView()
-        view.backgroundColor = .gray.withAlphaComponent(0.3)
-        let indicatorView = UIActivityIndicatorView(style: .large)
-        indicatorView.translatesAutoresizingMaskIntoConstraints = false
-        view.addSubview(indicatorView)
-        indicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        indicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        indicatorView.startAnimating()
-        return view
+        if self.presenter.numberOfRows() == 0 {
+            let view = UIView()
+            view.backgroundColor = .none
+            let indicatorView = UIActivityIndicatorView(style: .large)
+            indicatorView.translatesAutoresizingMaskIntoConstraints = false
+            view.addSubview(indicatorView)
+            indicatorView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            indicatorView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            indicatorView.startAnimating()
+            return view
+        }
+        return nil
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {

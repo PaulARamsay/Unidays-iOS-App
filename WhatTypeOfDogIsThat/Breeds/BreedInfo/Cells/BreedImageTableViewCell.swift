@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class BreedImageTableViewCell: UITableViewCell {
 
@@ -13,6 +14,7 @@ class BreedImageTableViewCell: UITableViewCell {
     
     func setupCellWith(imageUrlString: String) {
         guard let imageUrl = URL(string: imageUrlString) else { return }
+        self.breedImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
         self.breedImageView.sd_setImage(with: imageUrl)
     }
 }

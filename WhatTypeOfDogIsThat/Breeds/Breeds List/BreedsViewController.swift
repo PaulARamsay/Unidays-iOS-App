@@ -46,6 +46,7 @@ extension BreedsViewController: BreedsView {
                                    style: .done,
                                    target: self,
                                    action: #selector(self.viewFavouritesButtonTapped))
+        item.accessibilityLabel = "View Favourites"
         self.navigationItem.setRightBarButton(item, animated: true)
     }
 }

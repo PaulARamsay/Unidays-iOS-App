@@ -53,7 +53,7 @@ class BreedMoreInformationPresenter {
         }
         
         if !rowItems.isEmpty {
-            self.sections.append(SectionItem(title: "SubBreeds", rows: rowItems))
+            self.sections.append(SectionItem(title: "Sub-Breeds", rows: rowItems))
         }
         
         let imageSection = self.breed.breedImageList.compactMap {

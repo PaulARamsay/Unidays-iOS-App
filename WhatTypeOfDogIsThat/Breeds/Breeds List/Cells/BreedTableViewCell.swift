@@ -27,6 +27,7 @@ class BreedTableViewCell: UITableViewCell {
         self.breedImageView.layer.cornerRadius = 35
         self.subBreedsTextLabel.text = breed.subBreeds.count == 0 ? "" : "\(breed.subBreeds.count) Sub-breeds!"
         self.subBreedsTextLabel.isHidden = breed.subBreeds.count == 0
+        self.accessibilityLabel = "\(breed.breedName) breed"
         
         guard let imageName = breed.breedImageList.first,
                 let breedImageUrl = URL(string: imageName) else { return }

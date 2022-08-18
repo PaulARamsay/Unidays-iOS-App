@@ -34,6 +34,7 @@ class FavouriteButtonTableViewCell: UITableViewCell {
         let title = favouritedBreed ? "Favourited" : "Favourite"
         self.favouriteButton.setTitle(title,
                                       for: .normal)
+        self.favouriteButton.accessibilityLabel = favouritedBreed ? "Tap to unfavourite" : "Tap to favourite"
 
         let image = favouritedBreed ? "star.fill" : "star"
         self.favouriteButton.setImage(UIImage(systemName: image),

@@ -93,7 +93,7 @@ class BreedsPresenter {
         }
 
         self.rows.append(.header(title: "What Breed Is That?",
-                                 description: "Wondered what breed that is? Well good news, this app will help you do that! Take a look through the list"))
+                                 description: "Have you ever seen a dog and thought - 'I wonder what breed that is?' Well this app is for you! Take a look through the list and see if you can spot that terrific pooch!"))
         self.rows += breeds.compactMap { .breed(breed: $0) }
         self.view?.reloadTableView()
     }

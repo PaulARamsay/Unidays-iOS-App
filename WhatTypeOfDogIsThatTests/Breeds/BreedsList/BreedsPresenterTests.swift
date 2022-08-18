@@ -40,8 +40,42 @@ class BreedsPresenterTests: XCTestCase {
     
     func testNumberOfRows() {
         self.presenter.viewDidLoad()
+        XCTAssertEqual(self.presenter.numberOfRows(), 2)
+        switch self.presenter.item(for: 1) {
+        case .breed(let breed):
+            XCTAssertEqual(breed.breedName, "test")
+
+        default:
+            XCTFail("Wrong rowtype")
+        }
+    }
+    
+    func testDidShowErrorForBreedListNetworkFailure() {
+        self.mockApiClient.getBreedsListStubbed = nil
+        self.presenter.viewDidLoad()
         XCTAssertEqual(self.presenter.numberOfRows(), 1)
-        XCTAssertEqual(self.presenter.item(for: 0).breedName, "test")
+        switch self.presenter.item(for: 0) {
+        case .error(let title, let description):
+            XCTAssertEqual(title, "Oh no, looks like a network failure")
+            XCTAssertEqual(description, "Maybe try again?")
+
+        default:
+            XCTFail("Wrong rowtype")
+        }
+    }
+    
+    func testDidShowErrorForImageListNetworkFailure() {
+        self.mockApiClient.getBreedImageListStubbed = nil
+        self.presenter.viewDidLoad()
+        XCTAssertEqual(self.presenter.numberOfRows(), 1)
+        switch self.presenter.item(for: 0) {
+        case .error(let title, let description):
+            XCTAssertEqual(title, "Oh no, looks like a network failure")
+            XCTAssertEqual(description, "Maybe try again?")
+
+        default:
+            XCTFail("Wrong rowtype")
+        }
     }
 }
 

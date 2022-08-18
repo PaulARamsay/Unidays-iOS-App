@@ -46,7 +46,7 @@ class BreedFavouriteListPresenterTests: XCTestCase {
         XCTAssertEqual(self.presenter.numberOfRows(), 1)
         UserDefaults.standard.set([""], forKey: UserDefaults.Keys.favouriteKeys)
         self.presenter.viewWillAppear()
-        XCTAssertEqual(self.presenter.numberOfRows(), 0)
+        XCTAssertEqual(self.presenter.numberOfRows(), 1)
     }
 }
 

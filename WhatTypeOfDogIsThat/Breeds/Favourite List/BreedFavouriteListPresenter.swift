@@ -38,15 +38,15 @@ class BreedFavouriteListPresenter {
         self.rows.removeAll()
         self.favouriteList = favourites.favouriteBreeds()
         
-        guard !self.favouriteList.isEmpty else {
+        self.breeds = self.breeds.filter { self.favouriteList.contains($0.breedName) }
+        self.rows += self.breeds.compactMap { .breed(breed: $0) }
+        
+        guard !self.rows.isEmpty else {
             self.rows.append(.header(title: "No Favourites",
                                      description: "You haven't selected any favourites or you are having network issues :("))
             self.view?.reloadTableView()
             return
         }
-        
-        self.breeds = self.breeds.filter { self.favouriteList.contains($0.breedName) }
-        self.rows += self.breeds.compactMap { .breed(breed: $0) }
         
         self.view?.reloadTableView()
     }

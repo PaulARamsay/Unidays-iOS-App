@@ -19,6 +19,15 @@ class BreedsViewController: UIViewController {
         self.presenter.viewDidLoad()
         self.title = self.presenter.title
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.presenter.viewWillAppear()
+    }
+    
+    @objc func viewFavouritesButtonTapped() {
+        self.presenter.didTapViewFavourites()
+    }
 }
 
 // MARK: -  BreedsView
@@ -28,6 +37,14 @@ extension BreedsViewController: BreedsView {
     func reloadTableView() {
         self.tableView.reloadData()
     }
+    
+    func addViewFavouritesButton() {
+        let item = UIBarButtonItem(image: UIImage(systemName: "star.fill"),
+                                   style: .done,
+                                   target: self,
+                                   action: #selector(self.viewFavouritesButtonTapped))
+        self.navigationItem.setRightBarButton(item, animated: true)
+    }
 }
 
 // MARK: - UITableViewDelegate
@@ -35,6 +52,7 @@ extension BreedsViewController: BreedsView {
 extension BreedsViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.tableView.deselectRow(at: indexPath, animated: true)
         self.presenter.didSelectItem(at: indexPath.row)
     }
     

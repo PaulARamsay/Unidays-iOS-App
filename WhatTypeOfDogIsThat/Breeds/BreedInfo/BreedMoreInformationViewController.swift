@@ -9,7 +9,6 @@ import UIKit
 import SDWebImage
 
 protocol BreedMoreInformationView: AnyObject {
-    
     func reloadTableView()
 }
 
@@ -19,12 +18,29 @@ class BreedMoreInformationViewController: UIViewController {
     
     var presenter: BreedMoreInformationPresenting!
     
+    var favourited: Bool = false {
+        didSet {
+            let systemImageName = self.favourited ? "star" : "star.filled"
+            let item = UIBarButtonItem(image: UIImage(systemName: systemImageName),
+                                       style: .done,
+                                       target: self,
+                                       action: #selector(didTapFavouriteButton))
+            self.navigationItem.rightBarButtonItems = [item]
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.breedTableView.register(cells: [BreedNameTableViewCell.self,
-                                             BreedImageTableViewCell.self])
         self.presenter.viewDidLoad()
+        self.breedTableView.register(cells: [BreedNameTableViewCell.self,
+                                             BreedImageTableViewCell.self,
+                                             FavouriteButtonTableViewCell.self])
         self.title = self.presenter.title()
+        self.favourited = false
+    }
+    
+    @objc func didTapFavouriteButton() {
+        self.favourited.toggle()
     }
 }
 
@@ -61,10 +77,26 @@ extension BreedMoreInformationViewController: UITableViewDataSource {
             let cell = tableView.dequeue(cell: BreedImageTableViewCell.self, at: indexPath)
             cell.setupCellWith(imageUrlString: imageName)
             return cell
+            
+        case .favouriteButton(let favouritedBreed):
+            let cell = tableView.dequeue(cell: FavouriteButtonTableViewCell.self, at: indexPath)
+            cell.setupCell(delegate: self, breedFavourited: favouritedBreed)
+            return cell
         }
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         self.presenter.titleFor(section: section)
     }
+    
+}
+
+// MARK: - FavouriteButtonTableViewCellDelegate
+
+extension BreedMoreInformationViewController: FavouriteButtonTableViewCellDelegate {
+    
+    func didTapFavourite(favourited: Bool) {
+        self.presenter.didTapFavourite(favourited: favourited)
+    }
+    
 }

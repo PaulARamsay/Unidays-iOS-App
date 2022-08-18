@@ -9,6 +9,7 @@ import Foundation
 
 protocol BreedsView: AnyObject {
     func reloadTableView()
+    func addViewFavouritesButton() 
 }
 
 protocol BreedsViewPresenting: AnyObject {
@@ -16,14 +17,18 @@ protocol BreedsViewPresenting: AnyObject {
     func item(for row: Int) -> Breed
     func didSelectItem(at row: Int)
     func viewDidLoad()
-    
+    func viewWillAppear()
+
     var title: String { get }
+    func didTapViewFavourites()
 }
 
 
 protocol BreedsPresenterDelegate: AnyObject {
     func presenter(_ presenter: BreedsPresenter,
                    didTapBreed breed: Breed)
+    func presenter(_ presenter: BreedsPresenter,
+                   tappedToViewFavouritesWith breedsList: [Breed])
 }
 
 class BreedsPresenter {
@@ -42,18 +47,6 @@ class BreedsPresenter {
         self.view = view
         self.apiClient = apiClient
         self.coordinatorDelegate = coordinatorDelegate
-    }
-    
-    func viewDidLoad() {
-        self.apiClient.getBreedsList { BreedsDictionary in
-            let breedsList = Array(BreedsDictionary.breed.keys)
-            
-            let breedsListWithSubBreeds = breedsList.map { breedName in
-                return BreedData(breedName: breedName,
-                                 subBreeds: BreedsDictionary.breed[breedName] ?? [])
-            }
-            self.downloadBreedImageList(breedsList: breedsListWithSubBreeds)
-        }
     }
     
     func downloadBreedImageList(breedsList: [BreedData]) {
@@ -79,6 +72,23 @@ class BreedsPresenter {
 
 extension BreedsPresenter: BreedsViewPresenting {
     
+    func viewDidLoad() {
+        self.apiClient.getBreedsList { BreedsDictionary in
+            let breedsList = Array(BreedsDictionary.breed.keys)
+            
+            let breedsListWithSubBreeds = breedsList.map { breedName in
+                return BreedData(breedName: breedName,
+                                 subBreeds: BreedsDictionary.breed[breedName] ?? [])
+            }
+            self.downloadBreedImageList(breedsList: breedsListWithSubBreeds)
+            self.view?.addViewFavouritesButton()
+        }
+    }
+    
+    func viewWillAppear() {
+        // Not required, we only want to call this should we go back to the previous view
+    }
+    
     var title: String {
         return "Breeds List"
     }
@@ -93,5 +103,10 @@ extension BreedsPresenter: BreedsViewPresenting {
     
     func item(for row: Int) -> Breed {
         return self.breeds[row]
+    }
+    
+    func didTapViewFavourites() {
+        self.coordinatorDelegate?.presenter(self,
+                                            tappedToViewFavouritesWith: self.breeds)
     }
 }

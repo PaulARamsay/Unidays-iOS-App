@@ -14,7 +14,7 @@ protocol BreedsView: AnyObject {
 
 protocol BreedsViewPresenting: AnyObject {
     func numberOfRows() -> Int
-    func item(for row: Int) -> Breed
+    func item(for row: Int) -> BreedsPresenter.RowItem
     func didSelectItem(at row: Int)
     func viewDidLoad()
     func viewWillAppear()
@@ -38,6 +38,15 @@ class BreedsPresenter {
     private var coordinatorDelegate: BreedsPresenterDelegate?
     
     var breeds: [Breed] = []
+    var rows: [RowItem] = []
+    
+    enum RowItem {
+        case header(title: String,
+                    description: String)
+        case breed(breed: Breed)
+        case error(title: String,
+                   descrpition: String)
+    }
     
     // MARK: - Initialiser
     
@@ -54,17 +63,39 @@ class BreedsPresenter {
         let breed = breedsList.popLast()
         
         guard let breed = breed else {
-            self.view?.reloadTableView()
+            self.setupViewModel()
             return
         }
         
         self.apiClient.getBreedImageList(breedName: breed.breedName) { images in
+            guard let images = images else {
+                self.setupViewForNetworkFailure()
+                return
+            }
+            
             self.breeds.append(.init(breedName: breed.breedName,
                                      breedImageList: images.imageList,
                                      subBreeds: breed.subBreeds))
             self.downloadBreedImageList(breedsList: breedsList)
         }
-        
+    }
+    
+    func setupViewForNetworkFailure() {
+        self.rows.removeAll()
+        self.rows.append(.error(title: "Oh no, looks like a network failure", descrpition: "Maybe try again?"))
+        self.view?.reloadTableView()
+    }
+    
+    func setupViewModel() {
+        self.rows.removeAll()
+        let breeds = self.breeds.sorted { x, y in
+            x.breedName < y.breedName
+        }
+
+        self.rows.append(.header(title: "What Breed Is That?",
+                                 description: "Wondered what breed that is? Well good news, this app will help you do that! Take a look through the list"))
+        self.rows += breeds.compactMap { .breed(breed: $0) }
+        self.view?.reloadTableView()
     }
 }
 
@@ -73,13 +104,21 @@ class BreedsPresenter {
 extension BreedsPresenter: BreedsViewPresenting {
     
     func viewDidLoad() {
-        self.apiClient.getBreedsList { BreedsDictionary in
-            let breedsList = Array(BreedsDictionary.breed.keys)
+        self.rows.removeAll()
+        self.view?.reloadTableView()
+        self.apiClient.getBreedsList { breedsDictionary in
+            guard let breedsDictionary = breedsDictionary else {
+                self.setupViewForNetworkFailure()
+                return
+            }
+            
+            let breedsList = Array(breedsDictionary.breed.keys)
             
             let breedsListWithSubBreeds = breedsList.map { breedName in
                 return BreedData(breedName: breedName,
-                                 subBreeds: BreedsDictionary.breed[breedName] ?? [])
+                                 subBreeds: breedsDictionary.breed[breedName] ?? [])
             }
+            
             self.downloadBreedImageList(breedsList: breedsListWithSubBreeds)
             self.view?.addViewFavouritesButton()
         }
@@ -90,19 +129,25 @@ extension BreedsPresenter: BreedsViewPresenting {
     }
     
     var title: String {
-        return "Breeds List"
+        "Breeds List"
     }
     
     func didSelectItem(at row: Int) {
-        self.coordinatorDelegate?.presenter(self, didTapBreed: self.breeds[row])
+        switch self.rows[row] {
+        case .breed(let breed):
+            self.coordinatorDelegate?.presenter(self, didTapBreed: breed)
+
+        default:
+            return
+        }
     }
     
     func numberOfRows() -> Int {
-        return self.breeds.count
+        self.rows.count
     }
     
-    func item(for row: Int) -> Breed {
-        return self.breeds[row]
+    func item(for row: Int) -> RowItem {
+        self.rows[row]
     }
     
     func didTapViewFavourites() {

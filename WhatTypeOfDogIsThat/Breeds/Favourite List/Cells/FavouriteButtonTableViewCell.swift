@@ -34,10 +34,11 @@ class FavouriteButtonTableViewCell: UITableViewCell {
         let title = favouritedBreed ? "Favourited" : "Favourite"
         self.favouriteButton.setTitle(title,
                                       for: .normal)
-        
+
         let image = favouritedBreed ? "star.fill" : "star"
         self.favouriteButton.setImage(UIImage(systemName: image),
                                       for: .normal)
+        
     }
     
     @IBAction func didTapFavouriteButton(_ sender: Any) {

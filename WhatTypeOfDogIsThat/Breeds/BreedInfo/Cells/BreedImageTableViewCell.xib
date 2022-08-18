@@ -17,9 +17,9 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jj9-ae-Dhc">
-                        <rect key="frame" x="10" y="10" width="469" height="250"/>
+                        <rect key="frame" x="10" y="10" width="333.5" height="250"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="Jj9-ae-Dhc" secondAttribute="height" multiplier="15:8" id="PYe-DT-0cc"/>
+                            <constraint firstAttribute="width" secondItem="Jj9-ae-Dhc" secondAttribute="height" multiplier="4:3" id="PYe-DT-0cc"/>
                             <constraint firstAttribute="height" constant="250" id="yai-NB-EBz"/>
                         </constraints>
                     </imageView>

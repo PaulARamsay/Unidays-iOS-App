@@ -26,6 +26,7 @@ class BreedTableViewCell: UITableViewCell {
         self.breedTextLabel.text = breed.breedName
         self.breedImageView.layer.cornerRadius = 35
         self.subBreedsTextLabel.text = breed.subBreeds.count == 0 ? "" : "\(breed.subBreeds.count) Sub-breeds!"
+        self.subBreedsTextLabel.isHidden = breed.subBreeds.count == 0
         
         guard let imageName = breed.breedImageList.first,
                 let breedImageUrl = URL(string: imageName) else { return }
@@ -37,7 +38,7 @@ class BreedTableViewCell: UITableViewCell {
     
     private func setupCellFor(favourited: Bool) {
         self.breedImageView.layer.borderWidth = 3
-        self.breedImageView.layer.borderColor = !favourited ? UIColor.blue.cgColor : .none
+        self.breedImageView.layer.borderColor = !favourited ? UIColor.systemBlue.cgColor : .none
     }
 }
 
